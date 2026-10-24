@@ -1,0 +1,103 @@
+/* Accessible Focus Indicators (WCAG 2.2 AAA) */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #006874 !important;
+  outline-offset: 2px !important;
+}
+
+/* Material Symbols alignment */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.material-symbols-outlined.fill-icon {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Accessible Touch Targets */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Font Sizing Accessibility Modes */
+html.font-scale-lg {
+  font-size: 112.5% !important; /* ~18px base */
+}
+
+html.font-scale-xl {
+  font-size: 125% !important; /* ~20px base for elders */
+}
+
+/* High Contrast Mode (WCAG AAA) */
+html.high-contrast {
+  filter: contrast(115%);
+}
+
+html.high-contrast body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+html.high-contrast .bg-surface,
+html.high-contrast .bg-surface-container,
+html.high-contrast .bg-surface-container-low,
+html.high-contrast .bg-surface-container-high {
+  background-color: #ffffff !important;
+  border-color: #000000 !important;
+}
+
+html.high-contrast .border,
+html.high-contrast .border-outline-variant,
+html.high-contrast .border-outline {
+  border-color: #000000 !important;
+  border-width: 2px !important;
+}
+
+html.high-contrast .text-on-surface-variant {
+  color: #111111 !important;
+}
+
+/* Modal Animations */
+.modal-backdrop {
+  background-color: rgba(0, 14, 46, 0.7);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modal-content {
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+/* Custom Scrollbar for Accessibility */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f3ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7a8bb9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10234b;
+}
+
+/* Tab active indicators */
+.tab-btn.active {
+  border-bottom: 3px solid #006874;
+  color: #006874;
+  font-weight: 700;
+}
+

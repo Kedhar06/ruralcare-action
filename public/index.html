@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>RuralCare Action | Healthcare for Everyone, Care Within Reach</title>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS with Forms & Container Queries -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#b5c6f7",
+            "tertiary-container": "#002b1d",
+            "secondary-fixed-dim": "#79d4e2",
+            "surface-container-highest": "#d9e2fc",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#3d9c78",
+            "on-primary-fixed-variant": "#35466f",
+            "on-surface": "#121b2e",
+            "primary-fixed": "#dae2ff",
+            "on-secondary-fixed-variant": "#004f57",
+            "primary": "#000e2e",
+            "on-secondary": "#ffffff",
+            "on-background": "#121b2e",
+            "tertiary-fixed": "#97f5cc",
+            "surface": "#f9f9ff",
+            "primary-fixed-dim": "#b5c6f7",
+            "secondary-container": "#95f1ff",
+            "on-tertiary-fixed": "#002115",
+            "surface-container-low": "#f1f3ff",
+            "on-surface-variant": "#44464e",
+            "on-primary-container": "#7a8bb9",
+            "surface-dim": "#d1daf4",
+            "secondary": "#006874",
+            "primary-container": "#10234b",
+            "on-secondary-fixed": "#001f24",
+            "on-primary-fixed": "#041941",
+            "surface-variant": "#d9e2fc",
+            "background": "#f9f9ff",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#95f1ff",
+            "on-tertiary-fixed-variant": "#00513a",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "surface-tint": "#4d5d89",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#edf0ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#e1e8ff",
+            "surface-container": "#e9edff",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#273044",
+            "on-secondary-container": "#006f7b",
+            "outline-variant": "#c5c6d0",
+            "outline": "#75777f",
+            "tertiary": "#00130b",
+            "surface-bright": "#f9f9ff",
+            "tertiary-fixed-dim": "#7bd8b1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Plus Jakarta Sans", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body class="bg-background text-on-surface antialiased font-body flex flex-col min-h-screen">
+
+  <!-- 1. UTILITY & EMERGENCY BAR (WCAG 2.2 AAA High Affordance) -->
+  <aside id="top-utility-bar" aria-label="Emergency and Accessibility Bar" class="w-full bg-primary-container text-on-primary py-2.5 px-4 md:px-8 border-b border-on-primary-fixed-variant">
+    <!-- Populated by Navbar.js -->
+  </aside>
+
+  <!-- 2. MAIN STICKY NAVIGATION -->
+  <header class="w-full sticky top-0 z-50 px-4 md:px-8 mx-auto bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between h-20">
+      <!-- Logo Anchor -->
+      <a class="flex items-center gap-3 group focus:outline-none" href="#">
+        <div class="w-12 h-12 rounded-xl bg-primary-container text-secondary-fixed flex items-center justify-center shadow-md">
+          <span class="material-symbols-outlined text-[30px] fill-icon">health_and_safety</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[22px] font-bold text-primary group-hover:text-secondary transition-colors tracking-tight font-headline">
+            RuralCare Action
+          </span>
+          <span class="text-[12px] text-on-surface-variant flex items-center gap-1 font-semibold">
+            <span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+            National Health Mission Compliant / గ్రామీణ ఆరోగ్య సమన్వయం
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-6">
+        <a class="text-secondary border-b-2 border-secondary font-bold pb-1 text-[15px]" href="#">Home</a>
+        <a class="text-on-surface-variant hover:text-on-surface font-semibold text-[15px] transition-colors" href="#find-healthcare">Find Healthcare</a>
+        <a class="text-on-surface-variant hover:text-on-surface font-semibold text-[15px] transition-colors" href="#services">Services</a>
+        <a class="text-on-surface-variant hover:text-on-surface font-semibold text-[15px] transition-colors" href="#quick-access">What We Do</a>
+        <a class="text-on-surface-variant hover:text-on-surface font-semibold text-[15px] transition-colors" href="#ai-assistant">AI Assistant</a>
+      </nav>
+
+      <!-- Dynamic Header Actions (Populated by Navbar.js) -->
+      <div id="main-nav-actions" class="flex items-center gap-3">
+        <!-- Rendered by Navbar component -->
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. JEFFERSON HEALTH-INSPIRED HERO SECTION -->
+  <section class="relative bg-surface py-12 lg:py-16 overflow-hidden">
+    <!-- Decorative Medical Radial Glow -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-secondary-fixed-dim/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-32 w-96 h-96 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Trust Pill Badge -->
+          <div class="inline-flex items-center gap-2 bg-surface-container-high border border-outline-variant px-3.5 py-1.5 rounded-full text-[13px] font-bold text-primary">
+            <span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+            <span>AI-Powered Healthcare Coordination &amp; Elder Inclusion</span>
+          </div>
+
+          <!-- Bold Main Headline -->
+          <h1 id="hero-main-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight leading-tight font-headline">
+            Healthcare for everyone. <br class="hidden sm:inline"/>
+            <span class="text-secondary">Care within reach.</span>
+          </h1>
+
+          <!-- Bilingual Reassuring Subhead -->
+          <div class="space-y-2 border-l-4 border-secondary pl-4">
+            <p id="hero-telugu-sub" class="text-xl text-on-surface font-bold">
+              అందరికీ ఆరోగ్యం. అందుబాటులో సంరక్షణ
+            </p>
+            <p id="hero-desc-text" class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+              Find nearby primary health centres, request doctor appointments, and get guided care in Telugu or English with zero digital hassle.
+            </p>
+          </div>
+
+          <!-- Action Buttons (WCAG Minimum 48px touch targets) -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button id="hero-find-healthcare-btn" class="min-h-[52px] px-7 py-3 bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant rounded-xl font-bold shadow-md transition-all flex items-center justify-center gap-2 group text-[17px]" type="button">
+              <span>Find Healthcare Near You</span>
+              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">search</span>
+            </button>
+            <button id="hero-book-appt-btn" class="min-h-[52px] px-6 py-3 bg-surface-container-lowest border-2 border-primary text-primary hover:bg-surface-container-high rounded-xl font-bold transition-all flex items-center justify-center gap-2 text-[17px]" type="button">
+              <span class="material-symbols-outlined">calendar_month</span>
+              <span>Book an Appointment</span>
+            </button>
+            <!-- Audio Helper for Elder Convenience -->
+            <button id="hero-audio-guide-btn" class="min-h-[52px] px-4 py-3 bg-surface-container-high text-primary rounded-xl border border-outline-variant hover:bg-surface-variant font-bold flex items-center gap-2 text-[15px]" title="Listen to instructions in Telugu or English" type="button">
+              <span class="material-symbols-outlined text-secondary fill-icon">volume_up</span>
+              <span>వినండి / Audio Guide</span>
+            </button>
+          </div>
+
+          <!-- Trust Metrics Strip -->
+          <div class="pt-6 border-t border-outline-variant/60 flex flex-wrap items-center gap-y-3 gap-x-6 text-[14px] text-on-surface-variant">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-[20px]">local_hospital</span>
+              <span><strong>500+</strong> Rural Clinics Connected</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-[20px]">how_to_reg</span>
+              <span><strong>12,000+</strong> Verified Consultations</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+              <span><strong>100% Free</strong> Public Coordination</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Container & Network Verification Badge -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-outline-variant shadow-xl bg-surface-container-lowest">
+            <img alt="ASHA worker showing digital patient records on a tablet to rural village women in an Andhra Pradesh healthcare sub-centre" class="w-full h-[440px] object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaiJHqnAY-FUvpeM00WjwFjm0FyEiSQ4iDFlN9NxiqwTpKcSRd38zIx2Ipflza3N12aV-ed_1K3YxusPlP-_7nFijOMCwRPuiDAGctLqr5kp5kGolm4S-Fyp4xhdjylTnie9FJiPHr-Wjb2u4EIE5FS1K_Lc6xauvZjgZPyR0G9J1aIdzcl_vA1HhztvMd7RORbJGi8RyzFbTcNsHsTRBypAzgr47UNLMgwVtGriaIqE8TNBBkAqpl2A"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-on-primary">
+              <div class="text-[13px] opacity-90 font-medium">Sub-Centre Healthcare Team</div>
+              <div class="text-[20px] font-bold font-headline">Doorstep Clinical Support</div>
+            </div>
+          </div>
+
+          <!-- Floating High-Contrast Badge -->
+          <div class="absolute -bottom-5 left-6 bg-surface-container-lowest border-2 border-secondary rounded-2xl p-3.5 shadow-xl flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined fill-icon">health_and_safety</span>
+            </div>
+            <div>
+              <p class="text-[14px] font-bold text-primary">Verified ASHA &amp; ANM Network</p>
+              <p class="text-[12px] text-on-surface-variant">Active in Ananthapur, Kurnool &amp; Kadapa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THREE PROMINENT OVERLAPPING SERVICE CARDS -->
+  <section class="relative z-20 -mt-6 lg:-mt-8 px-4 md:px-8" id="services">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Find Healthcare -->
+        <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-surface-container-high text-primary flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+              <span class="material-symbols-outlined text-[32px]">domain</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2 font-headline">Find Healthcare</h3>
+            <p class="text-[15px] text-on-surface-variant leading-relaxed">
+              Discover nearby Primary Health Centres (PHCs), Community Health Centres (CHCs), and 24/7 wellness clinics.
+            </p>
+          </div>
+          <div class="pt-6 mt-4 border-t border-outline-variant/50">
+            <button id="service-card-facility-btn" class="inline-flex items-center gap-2 font-bold text-secondary group-hover:text-primary transition-colors text-[16px]">
+              <span>Browse Facilities</span>
+              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Book an Appointment -->
+        <div class="bg-surface-container-lowest rounded-2xl border-2 border-secondary p-6 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between group relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-secondary text-on-secondary text-[11px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+            Most Used
+          </div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+              <span class="material-symbols-outlined text-[32px]">event_available</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2 font-headline">Book an Appointment</h3>
+            <p class="text-[15px] text-on-surface-variant leading-relaxed">
+              Request a specialist consultation or general doctor visit, receive confirmation SMS, and track real-time token status.
+            </p>
+          </div>
+          <div class="pt-6 mt-4 border-t border-outline-variant/50">
+            <button id="service-card-appt-btn" class="inline-flex items-center gap-2 font-bold text-secondary group-hover:text-primary transition-colors text-[16px]">
+              <span>Book Appointment</span>
+              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Find a Doctor -->
+        <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-surface-container-high text-primary flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+              <span class="material-symbols-outlined text-[32px]">stethoscope</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2 font-headline">Find a Doctor</h3>
+            <p class="text-[15px] text-on-surface-variant leading-relaxed">
+              Explore verified community medical officers, visiting obstetricians, pediatric specialists, and tele-consult schedules.
+            </p>
+          </div>
+          <div class="pt-6 mt-4 border-t border-outline-variant/50">
+            <button id="service-card-doctor-btn" class="inline-flex items-center gap-2 font-bold text-secondary group-hover:text-primary transition-colors text-[16px]">
+              <span>Find a Doctor</span>
+              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. "WHAT WOULD YOU LIKE TO DO?" ACCESSIBLE ACTION TILE GRID -->
+  <section class="py-16 px-4 md:px-8 bg-surface" id="quick-access">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-primary tracking-tight font-headline">
+          What would you like to do?
+        </h2>
+        <p class="text-lg text-on-surface-variant mt-2 font-medium">
+          మీకు ఏమి సహాయం కావాలి? — Choose an action below for instant navigation.
+        </p>
+      </div>
+
+      <!-- 6 High-Touch, High-Contrast Accessible Tiles -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Tile 1: My Appointments -->
+        <button id="tile-my-appts-btn" class="text-left bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant hover:border-secondary hover:shadow-md transition-all flex items-start gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-surface-container text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[30px] fill-icon">calendar_today</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-primary group-hover:text-secondary transition-colors font-headline">
+              My Appointments
+            </h3>
+            <p class="text-[15px] text-on-surface-variant mt-1 leading-relaxed">
+              Check OPD slot, doctor token numbers, and live SMS reminder alerts.
+            </p>
+          </div>
+        </button>
+
+        <!-- Tile 2: Healthcare Facilities -->
+        <button id="tile-facilities-btn" class="text-left bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant hover:border-secondary hover:shadow-md transition-all flex items-start gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-surface-container text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[30px] fill-icon">apartment</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-primary group-hover:text-secondary transition-colors font-headline">
+              Healthcare Facilities
+            </h3>
+            <p class="text-[15px] text-on-surface-variant mt-1 leading-relaxed">
+              Locate Primary Health Centres, maternity homes, and diagnostic labs.
+            </p>
+          </div>
+        </button>
+
+        <!-- Tile 3: Referrals Tracking -->
+        <button id="tile-referrals-btn" class="text-left bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant hover:border-secondary hover:shadow-md transition-all flex items-start gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-surface-container text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[30px] fill-icon">assignment</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-primary group-hover:text-secondary transition-colors font-headline">
+              Hospital Referrals
+            </h3>
+            <p class="text-[15px] text-on-surface-variant mt-1 leading-relaxed">
+              Track inter-facility transfer slips and specialist Aarogyasri authorizations.
+            </p>
+          </div>
+        </button>
+
+        <!-- Tile 4: Follow-up Reminders -->
+        <button id="tile-reminders-btn" class="text-left bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant hover:border-secondary hover:shadow-md transition-all flex items-start gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-surface-container text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[30px] fill-icon">notifications_active</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-primary group-hover:text-secondary transition-colors font-headline">
+              Follow-up Reminders
+            </h3>
+            <p class="text-[15px] text-on-surface-variant mt-1 leading-relaxed">
+              Automated notifications for hypertension, diabetes checkups, and child immunizations.
+            </p>
+          </div>
+        </button>
+
+        <!-- Tile 5: Ask for Help / AI Assistant -->
+        <button id="tile-ai-btn" class="text-left bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant hover:border-secondary hover:shadow-md transition-all flex items-start gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+            <span class="material-symbols-outlined text-[30px] fill-icon">forum</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-primary group-hover:text-secondary transition-colors font-headline">
+              Ask for Help / AI Assistant
+            </h3>
+            <p class="text-[15px] text-on-surface-variant mt-1 leading-relaxed">
+              Voice &amp; text guidance in Telugu/English for elder and village users.
+            </p>
+          </div>
+        </button>
+
+        <!-- Tile 6: Emergency & Helpline -->
+        <a class="bg-surface-container-lowest p-6 rounded-2xl border-2 border-error/60 hover:border-error hover:shadow-md transition-all flex items-start gap-4 group" href="tel:108">
+          <div class="w-14 h-14 rounded-2xl bg-error text-on-error flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[30px] fill-icon">emergency</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-xl font-bold text-error font-headline">
+                Helpline 108 &amp; 104
+              </h3>
+            </div>
+            <p class="text-[15px] text-on-surface-variant mt-1 leading-relaxed">
+              Direct tap-to-call emergency dispatch and 24-hour qualified nurse consultation.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HEALTHCARE FINDER SEARCH ENGINE -->
+  <section class="py-16 px-4 md:px-8 bg-surface-container-low border-y border-outline-variant" id="find-healthcare">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-8" id="search-section">
+        <h2 class="text-3xl font-bold text-primary tracking-tight font-headline">
+          Find Healthcare Facilities &amp; Doctors
+        </h2>
+        <p class="text-lg text-on-surface-variant mt-1 font-medium">
+          Search across village sub-centres, mandal hospitals, and district referral centres without requiring GPS permission.
+        </p>
+      </div>
+
+      <!-- Search Input Container with High Affordance -->
+      <div class="bg-surface-container-lowest rounded-2xl p-4 md:p-6 border border-outline-variant shadow-md">
+        <form id="facility-search-form" class="flex flex-col md:flex-row gap-3">
+          <div class="relative flex-1">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant">
+              <span class="material-symbols-outlined text-[24px]">search</span>
+            </div>
+            <input id="facility-search-input" class="w-full min-h-[52px] pl-12 pr-4 bg-surface text-on-surface rounded-xl border border-outline text-[17px] focus:ring-2 focus:ring-secondary focus:border-secondary transition-all" placeholder="Search by Village name, Mandal, Town, District, or PIN code..." type="text" value="Kalyandurg"/>
+          </div>
+          <button class="min-h-[52px] px-8 bg-secondary text-on-secondary rounded-xl font-bold hover:bg-on-secondary-fixed-variant transition-all flex items-center justify-center gap-2 text-[16px]" type="submit">
+            <span class="material-symbols-outlined">filter_list</span>
+            <span>Search Facilities</span>
+          </button>
+        </form>
+
+        <!-- Filter Chips (High Contrast Pill Toggles) -->
+        <div aria-label="Facility type filters" class="flex items-center gap-2 mt-4 overflow-x-auto pb-2" role="group">
+          <span class="text-[13px] font-bold text-on-surface-variant shrink-0 mr-1">Filter by:</span>
+          <button class="facility-filter-chip px-4 py-2 bg-primary text-on-primary rounded-full text-label-sm font-bold flex items-center gap-1.5 shrink-0 shadow-sm" data-type="all" type="button">
+            <span class="material-symbols-outlined text-[16px] fill-icon">check</span>
+            All Types
+          </button>
+          <button class="facility-filter-chip px-4 py-2 bg-surface hover:bg-surface-container text-on-surface rounded-full text-label-sm font-semibold border border-outline-variant shrink-0 transition-colors" data-type="phc" type="button">
+            Primary Health Centres (PHC)
+          </button>
+          <button class="facility-filter-chip px-4 py-2 bg-surface hover:bg-surface-container text-on-surface rounded-full text-label-sm font-semibold border border-outline-variant shrink-0 transition-colors" data-type="chc" type="button">
+            Community Hospitals (CHC)
+          </button>
+          <button class="facility-filter-chip px-4 py-2 bg-surface hover:bg-surface-container text-on-surface rounded-full text-label-sm font-semibold border border-outline-variant shrink-0 transition-colors" data-type="lab" type="button">
+            Diagnostic &amp; Ultrasound Labs
+          </button>
+          <button class="facility-filter-chip px-4 py-2 bg-surface hover:bg-surface-container text-on-surface rounded-full text-label-sm font-semibold border border-outline-variant shrink-0 transition-colors" data-type="maternity" type="button">
+            Maternity Care Centers
+          </button>
+        </div>
+      </div>
+
+      <!-- Facility Cards Grid (Rendered by FacilityFinder.js) -->
+      <div id="facility-cards-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. BILINGUAL AI HEALTH NAVIGATION ASSISTANT -->
+  <section class="py-16 px-4 md:px-8 bg-surface" id="ai-assistant">
+    <div class="max-w-7xl mx-auto">
+      <div class="bg-primary-container text-on-primary rounded-3xl p-8 lg:p-12 relative overflow-hidden shadow-2xl border border-on-primary-fixed-variant">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary-fixed/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <!-- Left: Information & Tone Assurance -->
+          <div class="lg:col-span-6 space-y-4">
+            <div class="inline-flex items-center gap-2 bg-secondary text-on-secondary px-3.5 py-1.5 rounded-full text-[13px] font-bold">
+              <span class="material-symbols-outlined text-[16px]">smart_toy</span>
+              <span>Bilingual Health Navigator</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-surface-bright tracking-tight leading-tight font-headline">
+              Not sure where to start? <br/>
+              <span class="text-secondary-fixed">మీ భాషలో సరైన వైద్య సలహా పొందండి.</span>
+            </h2>
+            <p class="text-lg text-primary-fixed leading-relaxed font-medium">
+              Our AI Assistant guides you step-by-step through appointment tokens, Aarogyasri document verification, and elderly hospital referrals in Telugu and English.
+            </p>
+
+            <!-- Important Medical Disclaimer Box -->
+            <div class="bg-primary/60 border border-outline-variant/40 rounded-2xl p-4 text-[13px] text-surface-variant flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed shrink-0 text-[20px]">info</span>
+              <div>
+                <strong class="text-surface-bright">Official Disclaimer:</strong> RuralCare Assistant provides administrative triage, booking, and facility navigation only. It does not provide medical diagnoses or prescriptions. In case of acute medical emergencies, immediately dial <strong class="text-error-container">108</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Assistant Chat Box -->
+          <div class="lg:col-span-6 bg-surface-container-lowest text-on-surface rounded-2xl p-6 shadow-xl border border-outline-variant">
+            <div class="flex items-center justify-between pb-4 border-b border-outline-variant">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold">
+                  <span class="material-symbols-outlined text-[20px]">support_agent</span>
+                </div>
+                <div>
+                  <h4 class="text-[16px] font-bold text-primary font-headline">RuralCare Assistant</h4>
+                  <p class="text-[12px] text-on-surface-variant">Available 24/7 in English &amp; తెలుగు</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[12px] font-bold">Online</span>
+            </div>
+
+            <!-- Assistant Dialog Box (Scrollable) -->
+            <div id="ai-dialog-container" class="py-4 space-y-3 max-h-72 overflow-y-auto">
+              <div class="flex items-start gap-2.5">
+                <div class="w-7 h-7 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0 text-[12px] font-bold">
+                  AI
+                </div>
+                <div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-body-md text-on-surface max-w-[85%] border border-outline-variant/40 leading-relaxed">
+                  నమస్కారం! How can I help coordinate your healthcare today? You can select a question below or speak/type:
+                </div>
+              </div>
+
+              <!-- Suggested Quick Questions -->
+              <div class="space-y-2 pt-2">
+                <button class="ai-suggested-chip w-full text-left p-3 rounded-xl border border-outline-variant hover:border-secondary hover:bg-surface-bright text-label-md text-primary transition-all flex items-center justify-between group" type="button" data-query="How do I book an OPD token for tomorrow morning?">
+                  <span>How do I book an OPD token for tomorrow morning?</span>
+                  <span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary">arrow_forward</span>
+                </button>
+                <button class="ai-suggested-chip w-full text-left p-3 rounded-xl border border-outline-variant hover:border-secondary hover:bg-surface-bright text-label-md text-primary transition-all flex items-center justify-between group" type="button" data-query="Where is the nearest ultrasound facility under Aarogyasri?">
+                  <span>Where is the nearest ultrasound facility under Aarogyasri?</span>
+                  <span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary">arrow_forward</span>
+                </button>
+                <button class="ai-suggested-chip w-full text-left p-3 rounded-xl border border-outline-variant hover:border-secondary hover:bg-surface-bright text-label-md text-primary transition-all flex items-center justify-between group" type="button" data-query="How does hospital referral tracking work for elderly patients?">
+                  <span>How does hospital referral tracking work for elderly patients?</span>
+                  <span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Voice & Input Area -->
+            <form id="ai-chat-form" class="pt-3 border-t border-outline-variant flex items-center gap-2">
+              <input id="ai-query-input" class="flex-1 min-h-[48px] px-3.5 bg-surface text-on-surface rounded-xl border border-outline text-body-md focus:ring-2 focus:ring-secondary" placeholder="Ask in English or తెలుగు..." type="text"/>
+              <!-- Voice Microphone Button -->
+              <button id="ai-mic-btn" class="min-h-[48px] w-12 rounded-xl bg-surface-container-high text-primary hover:bg-secondary-fixed flex items-center justify-center transition-colors" title="Speak your question" type="button">
+                <span class="material-symbols-outlined">mic</span>
+              </button>
+              <!-- Send Button -->
+              <button id="ai-send-btn" class="min-h-[48px] px-4 rounded-xl bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant flex items-center justify-center transition-colors font-bold" type="submit">
+                <span class="material-symbols-outlined">send</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. HEALTHCARE WORKER WORKSPACE PROMOTION BANNER -->
+  <section class="py-12 px-4 md:px-8 bg-surface-container-lowest border-b border-outline-variant">
+    <div class="max-w-7xl mx-auto bg-gradient-to-r from-surface-container-low via-surface-bright to-surface-container-high rounded-3xl border border-outline-variant p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+      <div class="space-y-2 max-w-2xl">
+        <div class="inline-flex items-center gap-2 text-[12px] font-bold text-secondary uppercase tracking-wider">
+          <span class="material-symbols-outlined text-[18px]">badge</span>
+          ASHA &amp; ANM Field Health Workers
+        </div>
+        <h3 class="text-2xl md:text-3xl font-bold text-primary font-headline">
+          Healthcare coordination, made easier for ASHA and ANM workers.
+        </h3>
+        <p class="text-[16px] text-on-surface-variant leading-relaxed">
+          Coordinate appointments, manage hospital referrals, and log door-to-door patient follow-ups with zero paperwork and instant offline-ready sync.
+        </p>
+      </div>
+      <div class="shrink-0">
+        <button id="worker-promo-access-btn" class="min-h-[52px] px-6 py-3 bg-primary text-on-primary hover:bg-on-primary-fixed-variant rounded-xl font-bold shadow-md transition-all inline-flex items-center gap-2 text-[16px]" type="button">
+          <span>Access Healthcare Worker Workspace</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. COMPREHENSIVE ACCESSIBLE FOOTER -->
+  <footer class="w-full py-12 px-4 md:px-8 mx-auto bg-primary text-on-primary border-t border-primary-container">
+    <div class="max-w-7xl mx-auto space-y-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-on-primary-fixed-variant">
+        <!-- Brand Info -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="text-2xl font-bold text-on-primary flex items-center gap-2 font-headline">
+            <span class="material-symbols-outlined text-secondary-fixed text-[32px] fill-icon">health_and_safety</span>
+            RuralCare Action
+          </div>
+          <p class="text-body-md text-surface-variant max-w-md leading-relaxed">
+            Dedicated to rural primary healthcare accessibility, ASHA worker empowerment, and elder digital inclusion across Andhra Pradesh and Telangana.
+          </p>
+          <div class="flex items-center gap-2 text-[13px] text-secondary-fixed font-bold">
+            <span class="material-symbols-outlined text-[18px] fill-icon">verified</span>
+            <span>National Health Mission Compliant System (NHM)</span>
+          </div>
+        </div>
+
+        <!-- Quick Links Column 1 -->
+        <div class="space-y-3">
+          <h4 class="text-label-md font-bold text-surface-bright uppercase tracking-wider">
+            Emergency &amp; Support
+          </h4>
+          <ul class="space-y-2 text-label-sm">
+            <li>
+              <a class="text-surface-variant hover:text-secondary-fixed hover:underline transition-colors flex items-center gap-1.5" href="tel:108">
+                <span class="material-symbols-outlined text-[16px]">emergency</span>
+                Emergency Helpline 108
+              </a>
+            </li>
+            <li>
+              <a class="text-surface-variant hover:text-secondary-fixed hover:underline transition-colors flex items-center gap-1.5" href="tel:104">
+                <span class="material-symbols-outlined text-[16px]">call</span>
+                Medical Advice 104
+              </a>
+            </li>
+            <li>
+              <button id="footer-maternal-link" class="text-surface-variant hover:text-secondary-fixed hover:underline transition-colors flex items-center gap-1.5" type="button">
+                <span class="material-symbols-outlined text-[16px]">pregnant_woman</span>
+                Maternal Care &amp; Nutrition Guide
+              </button>
+            </li>
+            <li>
+              <button id="footer-aarogyasri-link" class="text-surface-variant hover:text-secondary-fixed hover:underline transition-colors flex items-center gap-1.5" type="button">
+                <span class="material-symbols-outlined text-[16px]">verified_user</span>
+                Aarogyasri Cashless Guidelines
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links Column 2 -->
+        <div class="space-y-3">
+          <h4 class="text-label-md font-bold text-surface-bright uppercase tracking-wider">
+            Portals &amp; Privacy
+          </h4>
+          <ul class="space-y-2 text-label-sm">
+            <li>
+              <button id="footer-worker-portal-link" class="text-surface-variant hover:text-secondary-fixed hover:underline transition-colors flex items-center gap-1.5" type="button">
+                <span class="material-symbols-outlined text-[16px]">badge</span>
+                Health Worker Portal
+              </button>
+            </li>
+            <li>
+              <span class="text-surface-variant flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px]">lock</span>
+                Strict Least-Privilege Access
+              </span>
+            </li>
+            <li>
+              <span class="text-surface-variant flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px]">accessible</span>
+                WCAG 2.2 AAA Accessibility
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-label-sm text-surface-variant">
+        <div>
+          © 2026 RuralCare Action. Supporting Rural Primary Healthcare &amp; Elder Inclusion. National Health Mission Compliant.
+        </div>
+        <div class="flex items-center gap-6">
+          <span class="text-surface-variant">Secure SQLite Relational Core</span>
+          <span class="text-surface-variant">ABHA Integrated</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Frontend JavaScript Modules -->
+  <script src="/js/i18n.js"></script>
+  <script src="/js/state.js"></script>
+  <script src="/js/toast.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/components/navbar.js"></script>
+  <script src="/js/components/authModals.js"></script>
+  <script src="/js/components/appointmentModal.js"></script>
+  <script src="/js/components/patientPortal.js"></script>
+  <script src="/js/components/workerPortal.js"></script>
+  <script src="/js/components/facilityFinder.js"></script>
+  <script src="/js/components/aiAssistant.js"></script>
+  <script src="/js/components/resourcesModal.js"></script>
+  <script src="/js/components/notificationsDrawer.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
+
