@@ -1,18 +1,22 @@
 {
   "name": "stitch_ruralcare_action_healthcare_platform",
   "version": "1.0.0",
-  "description": "",
+  "description": "RuralCare Action healthcare platform",
   "main": "src/server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24 <25"
+  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "node src/server.js",
+    "build": "node --check src/server.js",
     "seed": "node src/db/seed.js",
     "test": "node --test --test-concurrency=1 tests/*.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
