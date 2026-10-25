@@ -4,11 +4,12 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "node src/server.js",
-    "seed": "node src/db/seed.js",
-    "test": "node --test --test-concurrency=1 tests/*.test.js"
-  },
+  "start": "node src/server.js",
+  "dev": "node src/server.js",
+  "build": "node --check src/server.js",
+  "seed": "node src/db/seed.js",
+  "test": "node --test --test-concurrency=1 tests/*.test.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
